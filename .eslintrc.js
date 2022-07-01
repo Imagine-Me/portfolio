@@ -16,9 +16,9 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [
       2,
-      {extensions: ['.js', '.jsx', '.ts', '.tsx']},
+      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
     ],
     'linebreak-style': 0,
-    'tobject-curly-spacing': false,
+    'tobject-curly-spacing': 0,
   },
 };

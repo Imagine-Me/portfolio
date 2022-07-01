@@ -28,7 +28,9 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "mini-css-extract-plugin": "^2.6.1",
+    "prettier": "^2.7.1",
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
     "webpack": "^5.73.0",
@@ -39,7 +41,8 @@
   "scripts": {
     "prepare": "husky install",
     "start": "webpack serve --config ./webpack/webpack.config.dev.js",
-    "build": "webpack --config ./webpack/webpack.config.prod.js"
+    "build": "webpack --config ./webpack/webpack.config.prod.js",
+    "format": "prettier --write 'src/**/*.{js,ts,tsx,jsx}'"
   },
   "dependencies": {
     "react": "^18.2.0",
