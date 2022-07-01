@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio created using ReactJS",
+  "main": "index.js",
+  "author": "Prince Thomas",
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "husky": "^8.0.1"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  }
+}
