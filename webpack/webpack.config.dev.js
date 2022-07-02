@@ -1,19 +1,19 @@
-const path = require("path");
-const { default: merge } = require("webpack-merge");
-const commonConfig = require("./webpack.common");
+const path = require('path');
+const { default: merge } = require('webpack-merge');
+const commonConfig = require('./webpack.common');
 
 module.exports = merge(commonConfig, {
-  mode: "development",
+  mode: 'development',
   devServer: {
     port: 3000,
     hot: true,
     static: {
-      directory: path.resolve(__dirname, "..", "dist"),
+      directory: path.resolve(__dirname, '..', 'dist'),
     },
     open: true,
     historyApiFallback: true,
     devMiddleware: {
-      index: "index.html",
+      index: 'index.html',
     },
   },
 });
