@@ -1,0 +1,12 @@
+@use "../../styles/variables" as v;
+
+.Rectangle {
+  border-radius: 3px;
+  fill: v.$bg-white;
+}
+.StartLetter {
+  fill: v.$background-desktop;
+}
+.NormalLetter {
+  fill: v.$text-color;
+}

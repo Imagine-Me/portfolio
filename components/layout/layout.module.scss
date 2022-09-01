@@ -1,0 +1,12 @@
+@use "../../styles/variables" as v;
+
+.container {
+  min-height: 100vh;
+  background-color: v.$background-desktop;
+}
+
+@media (max-width: v.$max-width) {
+  .container {
+    background-color: v.$background-mobile;
+  }
+}
