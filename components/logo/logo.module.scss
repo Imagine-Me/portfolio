@@ -10,3 +10,10 @@
 .NormalLetter {
   fill: v.$text-color;
 }
+.Svg {
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.Svg:hover{
+  cursor: pointer;
+}

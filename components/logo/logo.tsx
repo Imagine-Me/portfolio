@@ -8,6 +8,7 @@ export default function Logo() {
       height="35"
       viewBox="0 0 155 35"
       fill="none"
+      className={classes.Svg}
     >
       <rect width="30" height="35" className={classes.Rectangle} rx={3} />
       <path

@@ -1,12 +1,20 @@
 @use "../../styles/variables" as v;
-
-.container {
+@use "../../styles/utils" as u;
+.Container {
   min-height: 100vh;
   background-color: v.$background-desktop;
+  @include u.flex;
+  flex-direction: column;
+}
+.Content {
+  flex-grow: 1;
+}
+.Footer {
+  height: 50px;
 }
 
 @media (max-width: v.$max-width) {
-  .container {
+  .Container {
     background-color: v.$background-mobile;
   }
 }
