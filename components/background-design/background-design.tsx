@@ -1,4 +1,5 @@
-import { createRef, useEffect, useMemo, useRef } from "react";
+import { createRef, useEffect, useMemo } from "react";
+import Parallax from "../parallax/parallax";
 import classes from "./background-design.module.scss";
 
 export default function BackgroundDesign() {
@@ -18,23 +19,21 @@ export default function BackgroundDesign() {
   }, []);
 
   useEffect(() => {
-    console.log(sectionRefs);
-
     sectionRefs.forEach((section, index) => {
       if (section.ref.current) {
         const height = section.ref.current.clientHeight;
-        console.log(height, index);
         const width = height * 2.1;
         section.ref.current.style.width = `${width}px`;
       }
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
-    <div className={classes.Container}>
+    <Parallax className={classes.Container}>
       {sectionRefs.map((ref, i) => (
         <div key={i} ref={ref.ref} className={ref.className}></div>
       ))}
-    </div>
+    </Parallax>
   );
 }
