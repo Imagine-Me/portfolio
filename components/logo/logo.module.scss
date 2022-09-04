@@ -13,6 +13,8 @@
 .Svg {
   margin-top: 15px;
   margin-left: 15px;
+  position: absolute;
+  z-index: 20;
 }
 .Svg:hover{
   cursor: pointer;
