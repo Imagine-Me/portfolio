@@ -2,7 +2,7 @@
 @use "../../styles/utils" as u;
 .Container {
   min-height: 100vh;
-  background-color: v.$background-desktop;
+  background-color: v.$background-mobile;
 }
 .Content {
   padding: 50px 0;
@@ -13,13 +13,41 @@
   bottom: 0;
   z-index: 0;
   overflow: hidden;
+  @include u.flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: start;
 }
+
+.Left{
+  z-index: 2;
+}
+.Right{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+}
+
 .Footer {
   height: 50px;
 }
 
-@media (max-width: v.$max-width) {
+@media (min-width: v.$min-width) {
   .Container {
-    background-color: v.$background-mobile;
+    background-color: v.$background-desktop;
+  }
+  .Content {
+    flex-direction: row;
+  }
+  .Left {
+    width: 45%;
+  }
+  .Right{
+    position: relative;
+    width: 55%;
+    height: 100%;
   }
 }

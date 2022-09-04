@@ -11,7 +11,10 @@ export default function Layout({ children }: LayoutProps) {
     <div className={classes.Container}>
       <Logo />
       <div className={classes.Content}>
-        <BackgroundDesign />
+        <div className={classes.Left}>{children}</div>
+        <div className={classes.Right}>
+          <BackgroundDesign />
+        </div>
       </div>
     </div>
   );
