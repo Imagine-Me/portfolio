@@ -32,12 +32,15 @@ const Parallax = (props: HTMLAttributes<HTMLDivElement>) => {
 
       const PX = mouseX / animateData.current.width;
       const PY = mouseY / animateData.current.height;
-      const rX = PX * 40;
-      const rY = PY * -40;
+      const rX = PX * 30;
+      const rY = PY * -30;
       const oldRange =
         containerRef.current.clientWidth - e.pageX - containerPosition.x;
-      const newRange = 100;
-      const left = ((e.pageX - containerPosition.x) * newRange) / oldRange;
+      const newRange = 20;
+      let left = 0;
+      if (window.innerWidth > 720) {
+        left = ((e.pageX - containerPosition.x) * newRange) / oldRange;
+      }
       containerRef.current.style.transform = `rotateY(${rX}deg) rotateX(${rY}deg) scale(1.1) translateX(${left}px)`;
     }
   };

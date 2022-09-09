@@ -32,7 +32,7 @@ export default function BackgroundDesign() {
   return (
     <Parallax className={classes.Container}>
       {sectionRefs.map((ref, i) => (
-        <div key={i} ref={ref.ref} className={ref.className}></div>
+        <div key={`background_design_${i}`} ref={ref.ref} className={ref.className}></div>
       ))}
     </Parallax>
   );
