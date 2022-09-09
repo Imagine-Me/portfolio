@@ -1,6 +1,7 @@
-@use '../../../styles/variables' as v;
+@use "../../../styles/variables" as v;
 
-.h1{
-    font-size: 2.5em;
-    color: v.$text-color;
+.h1 {
+  font-size: 2.5em;
+  color: v.$text-color;
+  letter-spacing: 0.05em;
 }
