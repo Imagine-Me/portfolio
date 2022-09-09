@@ -1,0 +1,55 @@
+@use "../../styles/utils" as u;
+@use "../../styles/variables" as v;
+
+.Container {
+  position: fixed;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  @include u.flex;
+  flex-direction: column;
+  z-index: 10;
+  align-items: center;
+  width: 45px;
+  height: 445px;
+  .Menu {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid v.$bg-white;
+    @include u.flex;
+    justify-content: center;
+    align-items: center;
+    background-color: v.$bg-white;
+    cursor: pointer;
+    .Hover {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      background-color: v.$bg-white;
+      border-radius: 50%;
+      border: 2px solid v.$bg-white;
+    }
+    svg {
+      z-index: 10;
+    }
+  }
+  .Active {
+    background-color: v.$background-mobile;
+  }
+  .Line {
+    width: 2px;
+    height: 50px;
+    background-color: v.$bg-white;
+  }
+}
+
+@media (min-width: v.$min-width) {
+  .Container {
+    .Active {
+      background-color: v.$background-desktop;
+    }
+  }
+}

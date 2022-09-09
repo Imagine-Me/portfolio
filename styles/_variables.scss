@@ -1,10 +1,15 @@
 $background-desktop: #2d2f30;
 $background-mobile: #121212;
 
-$text-color: #EDEDED;
+$text-color: #ededed;
 
-$bg-white: #EDEDED;
+$bg-white: #ededed;
 
 $min-width: 720px;
 
 $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
+
+:export {
+  bgWhite: $text-color;
+  bgDark: $background-mobile;
+}
