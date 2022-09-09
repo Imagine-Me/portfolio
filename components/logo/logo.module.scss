@@ -1,0 +1,21 @@
+@use "../../styles/variables" as v;
+
+.Rectangle {
+  border-radius: 3px;
+  fill: v.$bg-white;
+}
+.StartLetter {
+  fill: v.$background-desktop;
+}
+.NormalLetter {
+  fill: v.$text-color;
+}
+.Svg {
+  margin-top: 15px;
+  margin-left: 15px;
+  position: absolute;
+  z-index: 20;
+}
+.Svg:hover{
+  cursor: pointer;
+}
