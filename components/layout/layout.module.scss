@@ -36,6 +36,7 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
   height: 50px;
 }
 
+
 @media (min-width: v.$min-width) {
   .Container {
     background-color: v.$background-desktop;
@@ -44,12 +45,21 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
     flex-direction: row;
   }
   .Left {
-    width: 45%;
-    padding-left: 90px;
+    width: 55%;
   }
   .Right {
     position: relative;
-    width: 55%;
+    width: 45%;
     height: 100%;
+  }
+}
+
+@media (min-width: v.$min-width-tablet) {
+  .Left {
+    padding-left: 95px;
+    width: 45%;
+  }
+  .Right {
+    width: 55%;
   }
 }
