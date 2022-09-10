@@ -32,7 +32,7 @@ export default function JumpiLetters({ text }: Props) {
       {letters.map((letter, index) => {
         return (
           <div
-            key={`jumpi_${text}_${letter}`}
+            key={`jumpi_${text}_${index}`}
             className={classes.LetterContainer}
           >
             <motion.div
