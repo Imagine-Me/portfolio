@@ -1,0 +1,54 @@
+@use "../../styles/utils" as u;
+@use "../../styles/variables" as v;
+
+.Container {
+  @include u.flex;
+  position: relative;
+  padding: 3px 7px;
+  border-radius: 3px;
+  position: relative;
+  border: 1px solid v.$text-color;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  cursor: pointer;
+  .Hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: v.$text-color;
+    z-index: -1;
+  }
+  .Content {
+    z-index: 1;
+    color: v.$text-color;
+  }
+}
+.Container:hover {
+  .Content {
+    color: v.$background-desktop;
+  }
+}
+
+.Container.front-end {
+  border-color: #d2d7f0;
+  color: #d2d7f0;
+  .Hover {
+    background-color: #d2d7f0;
+  }
+}
+
+.Container.back-end {
+  border-color: #f0fcf1;
+  color: #f0fcf1;
+  .Hover {
+    background-color: #f0fcf1;
+  }
+}
+.Container.others {
+  border-color: #eecfe9;
+  color: #eecfe9;
+  .Hover {
+    background-color: #eecfe9;
+  }
+}
