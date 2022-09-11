@@ -43,7 +43,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       slideUp();
     }
   };
-
   useEffect(() => {
     window.addEventListener("wheel", onWheelEvent);
     window.addEventListener("touchstart", onTouchStart);
@@ -53,7 +52,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       window.removeEventListener("touchstart", onTouchStart);
       window.removeEventListener("touchend", onTouchEnd);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onWheelEvent]);
   return (
     <Layout>
