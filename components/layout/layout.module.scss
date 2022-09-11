@@ -3,7 +3,7 @@
 $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 .Container {
   min-height: 100vh;
-  background-color: v.$background-mobile;
+  background-color: v.$background-desktop;
 }
 .Content {
   padding: 50px 0;
@@ -38,9 +38,6 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 
 
 @media (min-width: v.$min-width) {
-  .Container {
-    background-color: v.$background-desktop;
-  }
   .Content {
     flex-direction: row;
   }
