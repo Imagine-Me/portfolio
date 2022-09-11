@@ -1,0 +1,7 @@
+@use "../../../styles/variables" as v;
+
+.H3 {
+  font-size: 1.7em;
+  color: v.$text-color;
+  letter-spacing: 0.05em;
+}

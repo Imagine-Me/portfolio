@@ -1,0 +1,33 @@
+@use "../../styles/utils" as u;
+.Box {
+  @include u.flex;
+}
+.Box.justify-center {
+  justify-content: center;
+}
+
+.Box.justify-end {
+  justify-content: flex-end;
+}
+
+.Box.align-middle {
+  align-items: center;
+}
+.Box.align-end {
+  align-items: flex-end;
+}
+.Box.direction-row-reverse {
+  flex-flow: row-reverse;
+}
+
+.Box.direction-column {
+  flex-flow: column;
+}
+
+.Box.direction-column-reverse {
+  flex-flow: column-reverse;
+}
+
+.Box.wrap-wrap {
+  flex-wrap: wrap;
+}
