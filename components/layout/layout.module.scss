@@ -23,7 +23,7 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 .Left {
   z-index: 2;
 }
-.Right {
+.RightDesign {
   position: absolute;
   left: 0;
   right: 0;
@@ -36,7 +36,6 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
   height: 50px;
 }
 
-
 @media (min-width: v.$min-width) {
   .Content {
     flex-direction: row;
@@ -47,6 +46,13 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
   .Right {
     position: relative;
     width: 45%;
+    height: 100%;
+    margin-left: 10px;
+  }
+  .RightDesign {
+    display: block;
+    position: relative;
+    flex-grow: 1;
     height: 100%;
   }
 }

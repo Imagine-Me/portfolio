@@ -22,14 +22,13 @@ export default function Layout({ children }: LayoutProps) {
       height: window.innerHeight,
     });
   }, []);
-
   return (
     <div className={classes.Container}>
       <Logo />
       <Menu />
       <div className={classes.Content}>
-        <div className={classes.Left}>{children}</div>
-        <div className={classes.Right}>
+        {children}
+        <div className={classes.RightDesign}>
           {bounds.width < 1220 ? (
             <BackgroundMobile {...bounds} />
           ) : (
