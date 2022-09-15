@@ -1,0 +1,8 @@
+@use "../../../styles/variables" as v;
+
+.H5 {
+  font-size: 1em;
+  color: v.$text-color;
+  letter-spacing: 0.03em;
+  margin: 0;
+}

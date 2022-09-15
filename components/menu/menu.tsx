@@ -93,7 +93,7 @@ export default function Menu() {
   useEffect(() => {
     setToggle(false);
   }, [router.asPath]);
-  
+
   return (
     <>
       <div
@@ -120,6 +120,7 @@ export default function Menu() {
       >
         {svgs.map((svg, index) => {
           const isCurrentPath = router.pathname == svg.path;
+
           return (
             <Fragment key={`menu_item_${index}`}>
               <Link href={svg.path}>
