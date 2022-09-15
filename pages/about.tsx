@@ -8,6 +8,8 @@ import { LeftContent, RightContent } from "../components/layout/content";
 import TypewriterText from "../components/typewriter-text/typewriter-text";
 import H1 from "../components/Typography/h1/h1";
 import P from "../components/Typography/p/p";
+import useWindow from "../hooks/useWindow";
+import classes from "./about.module.scss";
 
 interface Paragraph {
   text: string;
@@ -17,6 +19,7 @@ interface Paragraph {
 
 const About: NextPage = () => {
   const [timeLine, setTimeLine] = useState<boolean>(false);
+  const { width } = useWindow();
 
   const paragraph1 = `I started my career right after completing my bachelor's degree in computer science over five years ago. Since then, I have created successful websites that are fast, easy to use, and built with best practices.`;
   const paragraph2 = `Even though I started as a front-end developer, I was always curious to learn new technologies, which made me explore other areas such as backend and deployments.`;
@@ -35,36 +38,47 @@ const About: NextPage = () => {
     [] as Paragraph[]
   );
 
+  let showLeftContent = true;
+  if (width < 720 && timeLine) {
+    showLeftContent = false;
+  }
   return (
     <>
-      <LeftContent>
-        <div style={{ padding: "15px" }}>
-          <H1>
-            <JumpiLetters text="About" />
-          </H1>
-          <br />
-          {reducedParagraph.map((paragraph, index) => (
-            <P key={`paragraph_${index}`}>
-              <TypewriterText {...paragraph} />
-            </P>
-          ))}
-          <br />
-          <Button
-            Icon={NextIcon}
-            selected={timeLine}
-            onClick={() => setTimeLine((prev) => !prev)}
-          >
-            <TypewriterText text="timeline" />
-          </Button>
-          <br />
-          <Button Icon={DownloadIcon}>
-            <TypewriterText text="resume" />
-          </Button>
-        </div>
-      </LeftContent>
+      <AnimatePresence>
+        {showLeftContent && (
+          <LeftContent>
+            <div style={{ padding: "15px" }}>
+              <H1>
+                <JumpiLetters text="About" />
+              </H1>
+              <br />
+              {reducedParagraph.map((paragraph, index) => (
+                <P key={`paragraph_${index}`}>
+                  <TypewriterText {...paragraph} />
+                </P>
+              ))}
+              <br />
+              <Button
+                Icon={NextIcon}
+                selected={timeLine}
+                onClick={() => setTimeLine((prev) => !prev)}
+              >
+                <TypewriterText text="timeline" />
+              </Button>
+              <br />
+              <Button Icon={DownloadIcon}>
+                <TypewriterText text="resume" />
+              </Button>
+            </div>
+          </LeftContent>
+        )}
+      </AnimatePresence>
       <AnimatePresence>
         {timeLine && (
-          <RightContent>
+          <RightContent width={width}>
+            <div className={classes.Close} onClick={() => setTimeLine(false)}>
+              x
+            </div>
             <H1>Time line</H1>
           </RightContent>
         )}

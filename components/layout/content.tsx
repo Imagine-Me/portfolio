@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import classes from "./layout.module.scss";
 
 interface Props {
   children?: ReactNode;
-}
-
-export function LeftContent(props: Props) {
-  return <div {...props} className={classes.Left} />;
+  width?: number;
 }
 
 const animate = (windowWidth: number) => {
@@ -28,10 +25,10 @@ const animate = (windowWidth: number) => {
       transition: {
         width: {
           type: "linear",
-          duration: 1,
+          duration: windowWidth < 720 ? 0 : 1,
         },
         opacity: {
-          delay: 1,
+          delay: windowWidth < 720 ? 0 : 1,
         },
       },
     },
@@ -41,21 +38,28 @@ const animate = (windowWidth: number) => {
       transition: {
         width: {
           type: "linear",
-          delay: 1,
+          delay: windowWidth < 720 ? 0 : 1,
+          duration: windowWidth < 720 ? 0 : 1,
         },
         opacity: {
-          duration: 1,
+          duration: windowWidth < 720 ? 0 : 1,
         },
       },
     },
   };
 };
 
-export function RightContent(props: Props) {
-  const [width, setWidth] = useState(0);
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+
+export function LeftContent(props: Props) {
+  return (
+    <motion.div
+      {...props}
+      className={classes.Left}
+    />
+  );
+}
+
+export function RightContent({ width = 0, ...props }: Props) {
   return (
     <motion.div
       {...props}

@@ -15,7 +15,6 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
   z-index: 0;
   overflow: hidden;
   @include u.flex;
-  flex-direction: row-reverse;
   align-items: center;
   justify-content: flex-end;
 }
@@ -23,6 +22,7 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
 .Left {
   z-index: 2;
 }
+
 .RightDesign {
   position: absolute;
   left: 0;
@@ -30,6 +30,9 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
   bottom: 0;
   top: 0;
   z-index: 1;
+}
+.Right {
+  z-index: 2;
 }
 
 .Footer {

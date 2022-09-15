@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import useWindow from "../../hooks/useWindow";
 import BackgroundDesign, {
   BackgroundMobile,
 } from "../background-design/background-design";
@@ -11,17 +11,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const [bounds, setBounds] = useState({
-    width: 0,
-    height: 0,
-  });
-
-  useEffect(() => {
-    setBounds({
-      width: window.innerWidth,
-      height: window.innerHeight,
-    });
-  }, []);
+  const bounds = useWindow();
   return (
     <div className={classes.Container}>
       <Logo />
