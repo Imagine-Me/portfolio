@@ -5,6 +5,7 @@ import Button from "../components/button/button";
 import { DownloadIcon, NextIcon } from "../components/icons/icon";
 import JumpiLetters from "../components/jumbi-letters/jumpi-letters";
 import { LeftContent, RightContent } from "../components/layout/content";
+import Timeline from "../components/timeline/timeline";
 import TypewriterText from "../components/typewriter-text/typewriter-text";
 import H1 from "../components/Typography/h1/h1";
 import P from "../components/Typography/p/p";
@@ -79,7 +80,7 @@ const About: NextPage = () => {
             <div className={classes.Close} onClick={() => setTimeLine(false)}>
               x
             </div>
-            <H1>Time line</H1>
+            <Timeline />
           </RightContent>
         )}
       </AnimatePresence>
