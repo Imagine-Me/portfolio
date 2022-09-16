@@ -49,14 +49,12 @@ const animate = (windowWidth: number) => {
   };
 };
 
-
 export function LeftContent(props: Props) {
-  return (
-    <motion.div
-      {...props}
-      className={classes.Left}
-    />
-  );
+  return <motion.div {...props} className={classes.Left} />;
+}
+
+export function LeftFullContent(props: Props) {
+  return <div {...props} className={classes.LeftFullContent} />;
 }
 
 export function RightContent({ width = 0, ...props }: Props) {
