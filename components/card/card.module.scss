@@ -1,0 +1,58 @@
+@use "../../styles/utils" as u;
+@use "../../styles/variables" as v;
+
+.Card {
+  border-radius: 5px;
+  background-color: #3e3e3e;
+  border: 1px solid v.$bg-white;
+  @include u.flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  .Top {
+    width: 100%;
+    height: 190px;
+    background-color: v.$background-desktop;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    @include u.flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    .Content {
+      @include u.flex;
+      align-items: center;
+      h3 {
+        margin-left: 7px;
+      }
+    }
+    .Tags {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 7px;
+      @include u.flex;
+      flex-wrap: wrap;
+    }
+  }
+  .Bottom {
+    width: 100%;
+    min-height: 110px;
+    padding: 7px;
+    box-sizing: border-box;
+    .Description{
+      color: v.$text-color;
+      font-size: .9em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: justify;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+.Card:hover {
+  box-shadow: -1px 1px 12px #ffffff60;
+}

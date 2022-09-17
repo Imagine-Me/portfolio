@@ -1,0 +1,21 @@
+@use '../../styles/variables' as v;
+
+.LinkButton{
+    padding: 5px;
+    border-radius: 3px;
+    color: v.$text-color;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: .8em;
+    cursor: pointer;
+    svg{
+        margin-right: 5px;
+    }
+}
+.LinkButton.Link{
+    background-color: #5AE1FF;
+}
+
+.LinkButton.Github{
+    background-color: #1F1F1F;
+}

@@ -1,0 +1,29 @@
+@use "../../styles/utils" as u;
+@use "../../styles/variables" as v;
+
+@function getWidth($col) {
+  @return (100 * $col/12);
+}
+
+@mixin generateColumn($screen) {
+  @for $var from 1 to 13 {
+    .Col#{$screen}#{$var} {
+      width: calc(getWidth($var) * 1% - 20px);
+      padding: 0 10px
+    }
+  }
+}
+
+.Row {
+  @include u.flex;
+  width: 100%;
+  flex-wrap: wrap;
+  @include generateColumn("");
+  @media (max-width: v.$min-width-tablet) {
+    @include generateColumn("md");
+  }
+
+  @media (max-width: v.$min-width) {
+    @include generateColumn("sm");
+  }
+}

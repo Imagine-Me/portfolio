@@ -48,10 +48,9 @@
     padding: 7px 12px;
     border-radius: 3px;
     position: absolute;
-    white-space: nowrap;
-    min-width: 200px;
     left: 50%;
     top: 50%;
+    min-width: 120px;
     cursor: pointer;
     .H5 {
       color: v.$background-desktop;
@@ -75,5 +74,12 @@
 
   .Card.Right {
     transform: translate(20px, -50%);
+  }
+}
+
+@media (min-width: v.$min-width) {
+  .Card {
+    white-space: nowrap;
+    min-width: 200px;
   }
 }
