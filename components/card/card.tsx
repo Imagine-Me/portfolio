@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { DataProps } from "../../pages/project";
+import LinkButton from "../link-button/link-button";
 import List from "../list/list";
 import H3 from "../Typography/h3/h3";
+import H5 from "../Typography/h5/h5";
 import classes from "./card.module.scss";
 
 interface Props {
@@ -50,7 +52,16 @@ export default function Card({ delay, data }: Props) {
           ))}
         </div>
       </div>
-      <div className={classes.Bottom}></div>
+      <div className={classes.Bottom}>
+        <H5>{data.title}</H5>
+        <div style={{margin: '10px 0'}}>
+          <LinkButton link={data.link} type="link">Link</LinkButton>
+          <LinkButton link={data.github} type="github">Github</LinkButton>
+        </div>
+        <div className={classes.Description}>
+        {data.description}
+        </div>
+      </div>
     </motion.div>
   );
 }
