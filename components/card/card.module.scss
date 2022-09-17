@@ -18,6 +18,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    background-position: center center;
+    background-size: cover;
     .Content {
       @include u.flex;
       align-items: center;

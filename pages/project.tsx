@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { StaticImageData } from "next/image";
-import { useEffect, useRef } from "react";
 import Card from "../components/card/card";
 import Column from "../components/grid/column";
 import Row from "../components/grid/row";
@@ -12,9 +11,10 @@ import MeetImage from "../public/meet.png";
 import TodoImage from "../public/todo.png";
 import PortfolioImage from "../public/portfolio.png";
 import classes from "./project.module.scss";
+import useHeight from "../hooks/useHeight";
 
 export interface DataProps {
-  picture: StaticImageData;
+  picture: StaticImageData | null;
   head: string;
   tags: string[];
   image: string;
@@ -48,12 +48,7 @@ const data: DataProps[] = [
   {
     picture: MeetImage,
     head: "Meet",
-    tags: [
-      "React JS",
-      "WebRTC",
-      "SocketIO",
-      "Express JS",
-    ],
+    tags: ["React JS", "WebRTC", "SocketIO", "Express JS"],
     image: "",
     title: "React Meet",
     link: "https://meet-p.netlify.app/",
@@ -64,10 +59,7 @@ const data: DataProps[] = [
   {
     picture: TodoImage,
     head: "Todo",
-    tags: [
-      "Flutter",
-      "BLoC",
-    ],
+    tags: ["Flutter", "BLoC"],
     image: "",
     title: "Todo",
     link: "https://play.google.com/store/apps/details?id=com.mindpalace.todo",
@@ -78,32 +70,17 @@ const data: DataProps[] = [
   {
     picture: PortfolioImage,
     head: "Portfolio",
-    tags: [
-      "Next JS",
-      "Framer motion",
-    ],
+    tags: ["Next JS", "Framer motion"],
     image: "",
     title: "portfolio",
     link: "https://www.princethomas.dev/",
     github: "https://github.com/Imagine-Me/portfolio",
-    description:
-      "Portfolio created using NextJS and framer motion",
+    description: "Portfolio created using NextJS and framer motion",
   },
 ];
 
 const About: NextPage = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const height = containerRef.current.clientHeight;
-      const windowHeight = window.innerHeight - 150;
-      if (height > windowHeight) {
-        containerRef.current.style.height = `${windowHeight}px`;
-      }
-    }
-  }, []);
-
+  const containerRef = useHeight();
   return (
     <>
       <LeftContent></LeftContent>
