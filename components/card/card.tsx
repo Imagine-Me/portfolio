@@ -39,11 +39,16 @@ export default function Card({ delay, data }: Props) {
       variants={animate(delay)}
       className={classes.Card}
     >
-      <div className={classes.Top}>
-        <div className={classes.Content}>
-          <Image src={data.picture} alt={data.head} />
-          <H3>{data.head}</H3>
-        </div>
+      <div
+        className={classes.Top}
+        style={{ backgroundImage: `url(${data.image})` }}
+      >
+        {data.picture && (
+          <div className={classes.Content}>
+            <Image src={data.picture} alt={data.head} />
+            <H3>{data.head}</H3>
+          </div>
+        )}
         <div className={classes.Tags}>
           {data.tags.map((tag) => (
             <List key={tag} color="normal" size="small">
@@ -54,13 +59,17 @@ export default function Card({ delay, data }: Props) {
       </div>
       <div className={classes.Bottom}>
         <H5>{data.title}</H5>
-        <div style={{margin: '10px 0'}}>
-          <LinkButton link={data.link} type="link">Link</LinkButton>
-          <LinkButton link={data.github} type="github">Github</LinkButton>
+        <div style={{ margin: "10px 0" }}>
+          <LinkButton link={data.link} type="link">
+            Link
+          </LinkButton>
+          {data.github && (
+            <LinkButton link={data.github} type="github">
+              Github
+            </LinkButton>
+          )}
         </div>
-        <div className={classes.Description}>
-        {data.description}
-        </div>
+        <div className={classes.Description}>{data.description}</div>
       </div>
     </motion.div>
   );
