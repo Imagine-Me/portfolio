@@ -4,12 +4,9 @@
 .Container {
   @include u.flex;
   position: relative;
-  padding: 3px 7px;
   border-radius: 3px;
   position: relative;
   border: 1px solid v.$text-color;
-  margin-right: 7px;
-  margin-bottom: 7px;
   cursor: pointer;
   .Hover {
     position: absolute;
@@ -17,12 +14,24 @@
     left: 0;
     height: 100%;
     background-color: v.$text-color;
-    z-index: -1;
+    z-index: 0;
   }
   .Content {
     z-index: 1;
     color: v.$text-color;
   }
+}
+
+.medium{
+  margin-right: 7px;
+  margin-bottom: 7px;
+  padding: 3px 7px;
+}
+.small {
+  margin-right: 4px;
+  margin-bottom: 4px;
+  padding: 2px 4px;
+  font-size: 0.4em;
 }
 .Container:hover {
   .Content {

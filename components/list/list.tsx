@@ -5,6 +5,7 @@ import classes from "./list.module.scss";
 interface Props {
   children?: ReactNode;
   color?: "normal" | "front-end" | "back-end" | "others";
+  size?: "small" | "medium";
 }
 
 const animation = {
@@ -26,9 +27,13 @@ const animation = {
   },
 };
 
-export default function List({ children, color = "normal" }: Props) {
+export default function List({
+  children,
+  color = "normal",
+  size = "medium",
+}: Props) {
   const [hover, setHover] = useState(false);
-  const containerClass = [classes.Container, classes[color]];
+  const containerClass = [classes.Container, classes[size], classes[color]];
   return (
     <motion.div
       initial="initial"

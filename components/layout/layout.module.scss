@@ -43,6 +43,7 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
   top: 65px;
   padding: 0 15px;
   z-index: 2;
+  box-sizing: border-box;
 }
 
 .Footer {
@@ -78,7 +79,7 @@ $hoverEasing: cubic-bezier(0.23, 1, 0.32, 1);
   .Right {
     width: 55%;
   }
-  
+
   .LeftFullContent {
     padding-left: 95px;
   }

@@ -2,13 +2,14 @@
 @use "../../styles/variables" as v;
 
 @function getWidth($col) {
-  @return 100 * $col/12;
+  @return (100 * $col/12);
 }
 
 @mixin generateColumn($screen) {
   @for $var from 1 to 13 {
     .Col#{$screen}#{$var} {
-      width: getWidth($var) * 1%;
+      width: calc(getWidth($var) * 1% - 20px);
+      padding: 0 10px
     }
   }
 }
@@ -18,7 +19,6 @@
   width: 100%;
   flex-wrap: wrap;
   @include generateColumn("");
-  
   @media (max-width: v.$min-width-tablet) {
     @include generateColumn("md");
   }
