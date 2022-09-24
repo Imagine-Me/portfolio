@@ -104,3 +104,31 @@ export const LinkIcon = () => (
     />
   </svg>
 );
+
+export const SendIcon = ({ color }: IconProps) => (
+  <motion.svg
+    width="22"
+    height="22"
+    viewBox="0 0 22 22"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    initial="hidden"
+    animate="visible"
+    variants={draw}
+  >
+    <motion.path
+      d="M21 1L10 12"
+      stroke={color}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      variants={draw}
+    />
+    <motion.path
+      d="M21 1L14 21L10 12L1 8L21 1Z"
+      stroke={color}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      variants={draw}
+    />
+  </motion.svg>
+);

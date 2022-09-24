@@ -18,12 +18,15 @@ export default function InputComponent(
   props: DetailedHTMLProps<
     InputHTMLAttributes<HTMLInputElement>,
     HTMLInputElement
-  >
+  > & {
+    error?: string;
+  }
 ) {
-  const { className, ...inputProps } = props;
+  const { className, error = "", ...inputProps } = props;
   return (
     <motion.div animate={animate}>
       <input {...inputProps} className={`${className} ${classes.Input}`} />
+      {error && <div className={classes.Error}>{error}</div>}
     </motion.div>
   );
 }
@@ -33,13 +36,15 @@ export function TextAreaComponent(
     InputHTMLAttributes<HTMLTextAreaElement>,
     HTMLTextAreaElement
   > & {
-    rows: number
+    rows: number;
+    error?: string;
   }
 ) {
-  const { className, ...inputProps } = props;
+  const { className, error = "", ...inputProps } = props;
   return (
     <motion.div animate={animate}>
       <textarea {...inputProps} className={`${className} ${classes.Input}`} />
+      {error && <div className={classes.Error}>{error}</div>}
     </motion.div>
   );
 }
