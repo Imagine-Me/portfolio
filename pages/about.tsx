@@ -1,5 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import type { NextPage } from "next";
+import Head from "next/head";
 import { useState } from "react";
 import Button from "../components/button/button";
 import { DownloadIcon, NextIcon } from "../components/icons/icon";
@@ -45,6 +46,9 @@ const About: NextPage = () => {
   }
   return (
     <>
+    <Head>
+      <title>Prince Thomas - About</title>
+    </Head>
       <AnimatePresence>
         {showLeftContent && (
           <LeftContent>

@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Card from "../components/card/card";
 import Column from "../components/grid/column";
 import Row from "../components/grid/row";
@@ -17,6 +18,9 @@ const Blogs: NextPage<Props> = ({ posts }) => {
   const containerRef = useHeight();
   return (
     <>
+    <Head>
+      <title>Prince Thomas - Blogs</title>
+    </Head>
       <LeftContent></LeftContent>
       <LeftFullContent>
         <H1>

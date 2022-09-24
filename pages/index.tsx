@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Box from "../components/box/box";
 import JumpiLetters from "../components/jumbi-letters/jumpi-letters";
 import { LeftContent } from "../components/layout/content";
@@ -26,6 +27,9 @@ const Home: NextPage = () => {
   const others = ["PostgreSQL", "MongoDB", "SQLite"];
   return (
     <LeftContent>
+      <Head>
+        <title>Prince Thomas - Home</title>
+      </Head>
       <div style={{ padding: "15px" }}>
         <H1>
           <JumpiLetters text="Hi," />
@@ -43,13 +47,15 @@ const Home: NextPage = () => {
             target="_blank"
             rel="noreferrer"
             href="https://github.com/Imagine-Me"
-          >
+            aria-label="Github"
+            >
             <Github />
           </a>
           <a
             style={{ marginLeft: "10px" }}
             target="_blank"
             rel="noreferrer"
+            aria-label="LinkedIn"
             href="https://www.linkedin.com/in/prince-thomas-396b0a16a/"
           >
             <LinkedIn />

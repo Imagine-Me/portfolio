@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { StaticImageData } from "next/image";
 import Card from "../components/card/card";
 import Column from "../components/grid/column";
@@ -83,6 +84,9 @@ const About: NextPage = () => {
   const containerRef = useHeight();
   return (
     <>
+      <Head>
+        <title>Prince Thomas - Projects</title>
+      </Head>
       <LeftContent></LeftContent>
       <LeftFullContent>
         <H1>
