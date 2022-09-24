@@ -6,7 +6,7 @@ export default function useHeight() {
   useEffect(() => {
     if (containerRef.current) {
       const height = containerRef.current.clientHeight;
-      const windowHeight = window.innerHeight - 150;
+      const windowHeight = window.innerHeight - 180;
       if (height > windowHeight) {
         containerRef.current.style.height = `${windowHeight}px`;
       }

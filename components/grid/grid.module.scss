@@ -9,7 +9,7 @@
   @for $var from 1 to 13 {
     .Col#{$screen}#{$var} {
       width: calc(getWidth($var) * 1% - 20px);
-      padding: 0 10px
+      padding: 0 10px;
     }
   }
 }
@@ -25,5 +25,50 @@
 
   @media (max-width: v.$min-width) {
     @include generateColumn("sm");
+  }
+}
+
+@mixin M($margin) {
+  margin: #{$margin}px;
+}
+@mixin Mx($margin) {
+  margin: 0 #{$margin}px;
+}
+
+@mixin My($margin) {
+  margin: #{$margin}px 0;
+}
+
+@mixin Mt($margin) {
+  margin-top: #{$margin}px;
+}
+
+@mixin Mb($margin) {
+  margin-bottom: #{$margin}px;
+}
+
+$margin-map: "M" "Mx" "My" "Mt" "Mb";
+
+$margin-constant: 6;
+
+@each $class in $margin-map {
+  @for $var from 1 to 5 {
+    .Margin#{$class}#{$var} {
+      @if ($class == "M") {
+        @include M($var * $margin-constant);
+      }
+      @if ($class == "Mx") {
+        @include Mx($var * $margin-constant);
+      }
+      @if ($class == "My") {
+        @include My($var * $margin-constant);
+      }
+      @if ($class == "Mt") {
+        @include Mt($var * $margin-constant);
+      }
+      @if ($class == "Mb") {
+        @include Mb($var * $margin-constant);
+      }
+    }
   }
 }

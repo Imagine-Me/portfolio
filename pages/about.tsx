@@ -52,12 +52,13 @@ const About: NextPage = () => {
               <H1>
                 <JumpiLetters text="About" />
               </H1>
-              <br />
-              {reducedParagraph.map((paragraph, index) => (
-                <P key={`paragraph_${index}`}>
-                  <TypewriterText {...paragraph} />
-                </P>
-              ))}
+              <div className={classes.Content}>
+                {reducedParagraph.map((paragraph, index) => (
+                  <P key={`paragraph_${index}`}>
+                    <TypewriterText {...paragraph} />
+                  </P>
+                ))}
+              </div>
               <br />
               <Button
                 Icon={NextIcon}

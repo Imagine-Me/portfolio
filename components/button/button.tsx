@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  FC,
-  forwardRef,
-  ReactNode,
-  Ref,
-  useState,
-} from "react";
+import { FC, forwardRef, ReactNode, Ref, useState } from "react";
 import { IconProps } from "../icons/icon";
 import classes from "./button.module.scss";
 
@@ -15,6 +9,8 @@ interface Props {
   selected?: boolean;
   href?: string;
   onClick?: () => void;
+  fullWidth?: boolean;
+  size?: "md" | "lg";
 }
 
 const animation = {
@@ -33,11 +29,22 @@ const animation = {
 };
 
 export default forwardRef(function Button(props: Props, ref1) {
-  const { children, Icon, selected = false, onClick = () => {} } = props;
+  const {
+    children,
+    Icon,
+    selected = false,
+    onClick = () => {},
+    fullWidth = false,
+    size = "md",
+  } = props;
   const [hover, setHover] = useState(false);
   return (
     <motion.button
-      className={classes.Button}
+      className={[
+        classes.Button,
+        fullWidth ? classes.FullWidth : "",
+        size == "md" ? classes.Md : classes.Lg,
+      ].join(" ")}
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{
         scale: 1,
