@@ -1,0 +1,19 @@
+@use "../../styles/variables" as v;
+
+.Input {
+  background-color: transparent !important;
+  padding: 15px;
+  border: 1px solid v.$bg-white;
+  color: v.$text-color !important;
+  font-size: 1.1em;
+  width: 100%;
+  outline: none;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.Input:focus{
+    border-width: 2px;
+}

@@ -1,7 +1,6 @@
 @use "../../styles/variables" as v;
 @use "../../styles/utils" as u;
 .Button {
-  padding: 8px 12px;
   text-transform: uppercase;
   outline: none;
   position: relative;
@@ -21,12 +20,25 @@
     background-color: v.$bg-white;
     z-index: -1;
   }
-  .Content {
-    color: v.$text-color;
-    font-weight: 600;
-    letter-spacing: 1.3px;
-  }
   svg {
     margin-left: 7px;
   }
+}
+.Button.Md {
+  padding: 8px 12px;
+  .Content {
+    font-weight: 600;
+    letter-spacing: 1.3px;
+  }
+}
+.Button.Lg {
+  padding: 10px 16px;
+  .Content {
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+  }
+}
+.FullWidth {
+  width: 100%;
 }
