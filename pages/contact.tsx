@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import { FormEvent, useReducer, useState } from "react";
 import Button from "../components/button/button";
 import Column from "../components/grid/column";
@@ -137,6 +138,9 @@ const About: NextPage = () => {
 
   return (
     <LeftContent>
+      <Head>
+        <title>Prince Thomas - Contact</title>
+      </Head>
       <div style={{ padding: "15px" }}>
         <H1>
           <JumpiLetters text="Contact" />
